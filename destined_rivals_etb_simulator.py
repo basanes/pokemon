@@ -237,9 +237,9 @@ def save_histogram(r, path=None):
     data = r["profit_distribution"]
 
     if path is None:
-        # One file per cost tested, e.g. profit_distribution_EUR55.png,
+        # One file per cost tested, e.g. profit_distribution_200000_EUR55.png,
         # instead of overwriting the same file every run.
-        path = SCRIPT_DIR / f"profit_distribution_EUR{r['cost']:g}.png"
+        path = SCRIPT_DIR / f"profit_distribution_{r['n']:g}_EUR{r['cost']:g}.png"
     else:
         path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)  # never silently fail on a missing folder
